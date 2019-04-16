@@ -2,12 +2,18 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Gleam",
 	"patterns": [
+    {
+      "include": "#comments"
+    },
 		{
 			"include": "#keywords"
 		},
 		{
 			"include": "#strings"
-		}
+    },
+    {
+      "include": "#constant"
+    }
 	],
 	"repository": {
 		"keywords": {
@@ -26,7 +32,19 @@
 					"match": "\\\\."
 				}
 			]
-		}
+    },
+    "comments": {
+      "patterns": [{
+        "name": "comment.line.gleam",
+        "match": "^\/\/.*"
+      }]
+    },
+    "constant": {
+      "patterns": [{
+        "name": "constant.other.gleam",
+        "match": "[A-Z]+\\w*"
+      }]
+    }
 	},
 	"scopeName": "source.gleam"
 }
