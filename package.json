@@ -3,6 +3,11 @@
     "displayName": "Gleam Syntax",
     "description": "Syntax support for Gleam",
     "version": "0.0.1",
+    "publisher":"gleam-syntax",
+    "repository": {
+      "type":"git",
+      "url":"https://github.com/rawburt/vscode-gleam-syntax"
+    },
     "engines": {
         "vscode": "^1.33.0"
     },
