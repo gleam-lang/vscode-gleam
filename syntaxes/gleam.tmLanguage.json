@@ -1,0 +1,32 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Gleam",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.gleam",
+				"match": "\\b(let|case|pub|fn|import|enum|external|type)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.gleam",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.gleam",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.gleam"
+}

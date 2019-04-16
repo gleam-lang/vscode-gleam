@@ -1,0 +1,25 @@
+{
+    "name": "gleam-syntax",
+    "displayName": "Gleam Syntax",
+    "description": "Syntax support for Gleam",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.33.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "gleam",
+            "aliases": ["Gleam", "gleam"],
+            "extensions": [".gleam"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "gleam",
+            "scopeName": "source.gleam",
+            "path": "./syntaxes/gleam.tmLanguage.json"
+        }]
+    }
+}
