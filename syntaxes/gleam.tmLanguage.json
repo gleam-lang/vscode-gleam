@@ -49,18 +49,24 @@
       }]
     },
     "entity": {
-      "patterns":[{
-        "begin": "([a-z]+\\w*)\\(",
-        "end":"\\)",
-        "patterns":[{
-          "include":"$self"
-        }],
-        "captures": {
-          "1":{
-            "name": "entity.name.function.gleam"
+      "patterns":[
+        {
+          "begin": "([a-z]+\\w*)\\(",
+          "end":"\\)",
+          "patterns":[{
+            "include":"$self"
+          }],
+          "captures": {
+            "1":{
+              "name": "entity.name.function.gleam"
+            }
           }
+        },
+        {
+          "name":"entity.name.type.gleam",
+          "match":"\\w+\\:"
         }
-      }]
+      ]
     }
 	},
 	"scopeName": "source.gleam"
