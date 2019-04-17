@@ -43,10 +43,16 @@
       }]
     },
     "constant": {
-      "patterns": [{
-        "name": "constant.other.gleam",
-        "match": "[A-Z]+\\w*"
-      }]
+      "patterns": [
+        {
+          "name": "constant.other.gleam",
+          "match": "[A-Z]+\\w*"
+        },
+        {
+          "name": "constant.numeric.gleam",
+          "match": "\\b[0-9]+\\b"
+        }
+      ]
     },
     "entity": {
       "patterns":[
