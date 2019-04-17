@@ -4,6 +4,11 @@ Basic syntax highlighting of Gleam programs.
 
 ## Release Notes
 
+#### 0.0.3
+
+- First pass of function highlighting
+- Better comments support
+
 ### 0.0.2
 
 - Comments

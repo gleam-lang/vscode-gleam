@@ -13,6 +13,9 @@
     },
     {
       "include": "#constant"
+    },
+    {
+      "include": "#entity"
     }
 	],
 	"repository": {
@@ -36,13 +39,27 @@
     "comments": {
       "patterns": [{
         "name": "comment.line.gleam",
-        "match": "^\/\/.*"
+        "match": "\/\/.*"
       }]
     },
     "constant": {
       "patterns": [{
         "name": "constant.other.gleam",
         "match": "[A-Z]+\\w*"
+      }]
+    },
+    "entity": {
+      "patterns":[{
+        "begin": "([a-z]+\\w*)\\(",
+        "end":"\\)",
+        "patterns":[{
+          "include":"$self"
+        }],
+        "captures": {
+          "1":{
+            "name": "entity.name.function.gleam"
+          }
+        }
       }]
     }
 	},
