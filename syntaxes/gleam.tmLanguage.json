@@ -20,10 +20,12 @@
   ],
   "repository": {
     "keywords": {
-      "patterns": [{
-        "name": "keyword.control.gleam",
-        "match": "\\b(let|case|pub|fn|import|enum|external|type)\\b"
-      }]
+      "patterns": [
+        {
+          "name": "keyword.control.gleam",
+          "match": "\\b(let|case|pub|fn|import|enum|external|type)\\b"
+        }
+      ]
     },
     "strings": {
       "name": "string.quoted.double.gleam",
@@ -37,10 +39,12 @@
       ]
     },
     "comments": {
-      "patterns": [{
-        "name": "comment.line.gleam",
-        "match": "\/\/.*"
-      }]
+      "patterns": [
+        {
+          "name": "comment.line.gleam",
+          "match": "\/\/.*"
+        }
+      ]
     },
     "constant": {
       "patterns": [
@@ -59,9 +63,11 @@
         {
           "begin": "([a-z]+\\w*)\\(",
           "end":"\\)",
-          "patterns":[{
-            "include":"$self"
-          }],
+          "patterns":[
+            {
+              "include":"$self"
+            }
+          ],
           "captures": {
             "1":{
               "name": "entity.name.function.gleam"
