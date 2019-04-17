@@ -1,15 +1,15 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Gleam",
-	"patterns": [
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Gleam",
+  "patterns": [
     {
       "include": "#comments"
     },
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
     },
     {
       "include": "#constant"
@@ -17,24 +17,24 @@
     {
       "include": "#entity"
     }
-	],
-	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.gleam",
-				"match": "\\b(let|case|pub|fn|import|enum|external|type)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.gleam",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.gleam",
-					"match": "\\\\."
-				}
-			]
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [{
+        "name": "keyword.control.gleam",
+        "match": "\\b(let|case|pub|fn|import|enum|external|type)\\b"
+      }]
+    },
+    "strings": {
+      "name": "string.quoted.double.gleam",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.gleam",
+          "match": "\\\\."
+        }
+      ]
     },
     "comments": {
       "patterns": [{
@@ -74,6 +74,6 @@
         }
       ]
     }
-	},
-	"scopeName": "source.gleam"
+  },
+  "scopeName": "source.gleam"
 }
