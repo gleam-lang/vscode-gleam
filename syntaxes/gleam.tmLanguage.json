@@ -49,14 +49,26 @@
     "constant": {
       "patterns": [
         {
-          "name": "constant.other.gleam",
-          "match": "[[:upper:]][[:word:]]*"
+          "include": "#number"
         },
         {
-          "name": "constant.numeric.gleam",
-          "match": "\\b[0-9]+\\b"
+          "include": "#boolean"
+        },
+        {
+          "name": "constant.other.gleam",
+          "match": "[[:upper:]][[:word:]]*"
         }
       ]
+    },
+    "number": {
+      "name": "constant.numeric.gleam",
+      "match": "\\b[[:digit:]][[:digit:]_]*(\\.[[:digit:]]*)?\\b",
+      "patterns": []
+    },
+    "boolean": {
+      "name": "constant.numeric.gleam constant.language.gleam",
+      "match": "\\b(True|False)\\b",
+      "patterns": []
     },
     "entity": {
       "patterns":[
