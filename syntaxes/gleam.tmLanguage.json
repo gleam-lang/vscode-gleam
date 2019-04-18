@@ -42,7 +42,7 @@
       "patterns": [
         {
           "name": "comment.line.gleam",
-          "match": "\/\/.*"
+          "match": "#.*"
         }
       ]
     },
@@ -61,7 +61,7 @@
     "entity": {
       "patterns":[
         {
-          "begin": "([a-z]+\\w*)\\(",
+          "begin": "\\b([a-z]+\\w*)([[:space:]]*)?\\(",
           "end":"\\)",
           "patterns":[
             {
