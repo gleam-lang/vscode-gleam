@@ -61,7 +61,7 @@
     "entity": {
       "patterns":[
         {
-          "begin": "\\b([a-z]+\\w*)([[:space:]]*)?\\(",
+          "begin": "\\b([a-z]\\w*)([[:space:]]*)?\\(",
           "end":"\\)",
           "patterns":[
             {
