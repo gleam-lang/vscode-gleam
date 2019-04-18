@@ -50,7 +50,7 @@
       "patterns": [
         {
           "name": "constant.other.gleam",
-          "match": "[A-Z]+\\w*"
+          "match": "[[:upper:]][[:word:]]*"
         },
         {
           "name": "constant.numeric.gleam",
@@ -61,7 +61,7 @@
     "entity": {
       "patterns":[
         {
-          "begin": "\\b([a-z]\\w*)([[:space:]]*)?\\(",
+          "begin": "\\b([[:lower:]][[:word:]]*)([[:space:]]*)?\\(",
           "end":"\\)",
           "patterns":[
             {
@@ -76,7 +76,7 @@
         },
         {
           "name":"entity.name.type.gleam",
-          "match":"\\b([a-z][[:word:]]*):"
+          "match":"\\b([[:lower:]][[:word:]]*):"
         }
       ]
     }
