@@ -76,7 +76,7 @@
         },
         {
           "name":"entity.name.type.gleam",
-          "match":"\\w+\\:"
+          "match":"\\b([a-z][[:word:]]*):"
         }
       ]
     }
