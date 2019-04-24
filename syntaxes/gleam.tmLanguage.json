@@ -1,15 +1,15 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Gleam",
-	"patterns": [
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Gleam",
+  "patterns": [
     {
       "include": "#comments"
     },
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
     },
     {
       "include": "#constant"
@@ -17,51 +17,69 @@
     {
       "include": "#entity"
     }
-	],
-	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.gleam",
-				"match": "\\b(let|case|pub|fn|import|enum|external|type)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.gleam",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.gleam",
-					"match": "\\\\."
-				}
-			]
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.gleam",
+          "match": "\\b(case|enum|external|fn|import|let|pub|type)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.gleam",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.gleam",
+          "match": "\\\\."
+        }
+      ]
     },
     "comments": {
-      "patterns": [{
-        "name": "comment.line.gleam",
-        "match": "\/\/.*"
-      }]
+      "patterns": [
+        {
+          "name": "comment.line.gleam",
+          "match": "\/\/.*"
+        }
+      ]
     },
     "constant": {
       "patterns": [
         {
-          "name": "constant.other.gleam",
-          "match": "[A-Z]+\\w*"
+          "include": "#number"
         },
         {
-          "name": "constant.numeric.gleam",
-          "match": "\\b[0-9]+\\b"
+          "include": "#boolean"
+        },
+        {
+          "name": "constant.other.gleam",
+          "match": "[[:upper:]][[:word:]]*"
         }
       ]
+    },
+    "number": {
+      "name": "constant.numeric.gleam",
+      "match": "\\b[[:digit:]][[:digit:]_]*(\\.[[:digit:]]*)?\\b",
+      "patterns": []
+    },
+    "boolean": {
+      "name": "constant.numeric.gleam constant.language.gleam",
+      "match": "\\b(True|False)\\b",
+      "patterns": []
     },
     "entity": {
       "patterns":[
         {
-          "begin": "([a-z]+\\w*)\\(",
+          "begin": "\\b([[:lower:]][[:word:]]*)([[:space:]]*)?\\(",
           "end":"\\)",
-          "patterns":[{
-            "include":"$self"
-          }],
+          "patterns":[
+            {
+              "include":"$self"
+            }
+          ],
           "captures": {
             "1":{
               "name": "entity.name.function.gleam"
@@ -70,10 +88,10 @@
         },
         {
           "name":"entity.name.type.gleam",
-          "match":"\\w+\\:"
+          "match":"\\b([[:lower:]][[:word:]]*):"
         }
       ]
     }
-	},
-	"scopeName": "source.gleam"
+  },
+  "scopeName": "source.gleam"
 }
