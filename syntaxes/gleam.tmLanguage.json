@@ -23,7 +23,7 @@
       "patterns": [
         {
           "name": "keyword.control.gleam",
-          "match": "\\b(case|if|external|fn|import|let|assert|try|pub|type)\\b"
+          "match": "\\b(case|if|external|fn|import|let|assert|try|pub|type|opaque)\\b"
         }
       ]
     },
