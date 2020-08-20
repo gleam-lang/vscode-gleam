@@ -2,7 +2,7 @@
   "name": "gleam-syntax",
   "displayName": "Gleam Syntax",
   "description": "Syntax support for Gleam",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "publisher":"gleam-syntax",
   "repository": {
     "type":"git",
