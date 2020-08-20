@@ -1,5 +1,5 @@
-# Gleam VSCode Syntax Highlighter
+# Gleam Syntax
 
-A basic Gleam syntax highlighter for VSCode. <!-- Extension available at the [VSCode Extension Marketplace](https://marketplace.visualstudio.com/items?itemName=gleam-syntax.gleam-syntax) -->
+A basic Gleam syntax highlighter for VSCode.
 
 [Learn more about Gleam here](https://gleam.run/)
