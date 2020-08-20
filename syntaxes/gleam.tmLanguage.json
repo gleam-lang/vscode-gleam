@@ -23,7 +23,7 @@
       "patterns": [
         {
           "name": "keyword.control.gleam",
-          "match": "\\b(case|external|fn|import|let|assert|try|pub|type|opaque)\\b"
+          "match": "\\b(case|if|external|fn|import|let|assert|try|pub|type|opaque)\\b"
         }
       ]
     },
@@ -71,24 +71,24 @@
       "patterns": []
     },
     "entity": {
-      "patterns":[
+      "patterns": [
         {
           "begin": "\\b([[:lower:]][[:word:]]*)([[:space:]]*)?\\(",
-          "end":"\\)",
-          "patterns":[
+          "end": "\\)",
+          "patterns": [
             {
-              "include":"$self"
+              "include": "$self"
             }
           ],
           "captures": {
-            "1":{
+            "1": {
               "name": "entity.name.function.gleam"
             }
           }
         },
         {
-          "name":"entity.name.type.gleam",
-          "match":"\\b([[:lower:]][[:word:]]*):"
+          "name": "entity.name.type.gleam",
+          "match": "\\b([[:lower:]][[:word:]]*):"
         }
       ]
     }
