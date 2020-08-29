@@ -24,6 +24,10 @@
         {
           "name": "keyword.control.gleam",
           "match": "\\b(case|if|external|fn|import|let|assert|try|pub|type|opaque|const)\\b"
+        },
+        {
+          "name": "keyword.operator.arrow.gleam",
+          "match": "->"
         }
       ]
     },
@@ -55,7 +59,7 @@
           "include": "#boolean"
         },
         {
-          "name": "constant.other.gleam",
+          "name": "entity.name.type.gleam",
           "match": "[[:upper:]][[:word:]]*"
         }
       ]
@@ -66,7 +70,7 @@
       "patterns": []
     },
     "boolean": {
-      "name": "constant.numeric.gleam constant.language.gleam",
+      "name": "constant.language.boolean.gleam",
       "match": "\\b(True|False)\\b",
       "patterns": []
     },
@@ -87,7 +91,11 @@
           }
         },
         {
-          "name": "entity.name.type.gleam",
+          "name": "variable.parameter.gleam",
+          "match": "\\b([[:lower:]][[:word:]]*):\\s"
+        },
+        {
+          "name": "entity.name.namespace.gleam",
           "match": "\\b([[:lower:]][[:word:]]*):"
         }
       ]
