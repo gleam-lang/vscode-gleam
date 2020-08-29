@@ -28,6 +28,10 @@
         {
           "name": "keyword.operator.arrow.gleam",
           "match": "->"
+        },
+        {
+          "name": "keyword.operator.pipe.gleam",
+          "match": "\\|>"
         }
       ]
     },
