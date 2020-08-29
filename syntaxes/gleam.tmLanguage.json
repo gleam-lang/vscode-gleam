@@ -23,7 +23,7 @@
       "patterns": [
         {
           "name": "keyword.control.gleam",
-          "match": "\\b(case|if|external|fn|import|let|assert|try|pub|type|opaque|const)\\b"
+          "match": "\\b(case|if|external|fn|import|let|assert|try|pub|type|opaque|const|todo)\\b"
         },
         {
           "name": "keyword.operator.arrow.gleam",
@@ -32,6 +32,38 @@
         {
           "name": "keyword.operator.pipe.gleam",
           "match": "\\|>"
+        },
+        {
+          "name": "keyword.operator.splat.gleam",
+          "match": "\\.\\."
+        },
+        {
+          "name": "keyword.operator.comparison.float.gleam",
+          "match": "(<=\\.|>=\\.|==\\.|!=\\.|<\\.|>\\.)"
+        },
+        {
+          "name": "keyword.operator.comparison.int.gleam",
+          "match": "(<=|>=|==|!=|<|>)"
+        },
+        {
+          "name": "keyword.operator.logical.gleam",
+          "match": "(&&|\\|\\|)"
+        },
+        {
+          "name": "keyword.operator.other.gleam",
+          "match": "\\|"
+        },
+        {
+          "name": "keyword.operator.arithmetic.float.gleam",
+          "match": "(\\+\\.|\\-\\.|/\\.|\\*\\.|%\\.)"
+        },
+        {
+          "name": "keyword.operator.arithmetic.int.gleam",
+          "match": "(\\+|\\-|/|\\*|%)"
+        },
+        {
+          "name": "keyword.operator.assignment.gleam",
+          "match": "="
         }
       ]
     },
