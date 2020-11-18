@@ -1,5 +1,3 @@
-# Gleam Syntax
+# VS Code Gleam 
 
-A basic Gleam syntax highlighter for VSCode.
-
-[Learn more about Gleam here](https://gleam.run/)
+Gleam support for VS Code.

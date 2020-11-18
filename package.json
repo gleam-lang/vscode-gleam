@@ -1,12 +1,12 @@
 {
-  "name": "gleam-syntax",
-  "displayName": "Gleam Syntax",
-  "description": "Syntax support for Gleam",
-  "version": "0.0.13",
-  "publisher":"gleam-syntax",
-  "repository": {
+  "name": "gleam",
+  "displayName": "Gleam",
+  "description": "Support for Gleam",
+  "version": "1.0.0",
+  "publisher":"gleam",
+  "repository":  
     "type":"git",
-    "url":"https://github.com/rawburt/vscode-gleam-syntax"
+    "url":"https://github.com/gleam-lang/vscode-gleam"
   },
   "engines": {
     "vscode": "^1.33.0"
