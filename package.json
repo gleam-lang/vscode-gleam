@@ -3,10 +3,10 @@
   "displayName": "Gleam",
   "description": "Support for Gleam",
   "version": "1.0.0",
-  "publisher":"gleam",
-  "repository":  
-    "type":"git",
-    "url":"https://github.com/gleam-lang/vscode-gleam"
+  "publisher": "gleam",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gleam-lang/vscode-gleam"
   },
   "engines": {
     "vscode": "^1.33.0"
@@ -19,8 +19,13 @@
     "languages": [
       {
         "id": "gleam",
-        "aliases": ["Gleam", "gleam"],
-        "extensions": [".gleam"],
+        "aliases": [
+          "Gleam",
+          "gleam"
+        ],
+        "extensions": [
+          ".gleam"
+        ],
         "configuration": "./language-configuration.json"
       }
     ],
