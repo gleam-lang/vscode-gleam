@@ -1,8 +1,8 @@
 {
   "name": "gleam",
   "displayName": "Gleam",
-  "description": "Support for Gleam",
-  "version": "1.1.1",
+  "description": "Support for the Gleam programming language",
+  "version": "1.2.0",
   "publisher": "gleam",
   "repository": {
     "type": "git",
@@ -12,7 +12,8 @@
     "vscode": "^1.52.0"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages",
+    "Formatters"
   ],
   "icon": "images/icon.png",
   "contributes": {
@@ -35,7 +36,12 @@
         "scopeName": "source.gleam",
         "path": "./syntaxes/gleam.tmLanguage.json"
       }
-    ]
+    ],
+    "configurationDefaults": {
+      "[gleam]": {
+        "editor.formatOnSave": true
+      }
+    }
   },
   "activationEvents": [
     "onLanguage:gleam"
