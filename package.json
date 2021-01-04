@@ -37,6 +37,12 @@
         "path": "./syntaxes/gleam.tmLanguage.json"
       }
     ],
+    "snippets": [
+      {
+        "language": "gleam",
+        "path": "./snippets.json"
+      }
+    ],
     "configurationDefaults": {
       "[gleam]": {
         "editor.formatOnSave": true
