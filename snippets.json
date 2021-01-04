@@ -110,7 +110,7 @@
       "external fn"
     ],
     "body": [
-      "external fn ${1:function_name}(${2}) -> {$3:Nil}) = \"$4\" \"$0\""
+      "external fn ${1:function_name}(${2}) -> {$3:Nil} = \"$4\" \"$0\""
     ],
     "description": "external function"
   },
