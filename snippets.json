@@ -136,7 +136,7 @@
     ],
     "description": "import"
   },
-  "Import Exposing": {
+  "Import Unqualified": {
     "prefix": [
       "im.",
       "import"
