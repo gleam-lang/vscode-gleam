@@ -164,7 +164,7 @@
     "body": [
       "tuple(${0})"
     ],
-    "description": "import"
+    "description": "tuple()"
   },
   "Block": {
     "prefix": [
