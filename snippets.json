@@ -154,7 +154,7 @@
     "body": [
       "|> ${0}"
     ],
-    "description": "import"
+    "description": "Pipe |>"
   },
   "Tuple": {
     "prefix": [
