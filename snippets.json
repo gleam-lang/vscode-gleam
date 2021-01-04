@@ -122,7 +122,7 @@
       "pub external fn"
     ],
     "body": [
-      "pub external fn ${1:function_name}(${2}) -> {$3:Nil}) = \"${4}\" \"${0}\""
+      "pub external fn ${1:function_name}(${2}) -> {$3:Nil} = \"${4}\" \"${0}\""
     ],
     "description": "public external function"
   },
