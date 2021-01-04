@@ -144,7 +144,7 @@
     "body": [
       "import ${1:gleam/result}.{${0}}"
     ],
-    "description": "import"
+    "description": "import unqualified"
   },
   "Pipe": {
     "prefix": [
