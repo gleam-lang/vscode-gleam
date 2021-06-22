@@ -14,7 +14,7 @@
       "pub fn"
     ],
     "body": [
-      "pub fn ${1:function_name}(${2}) -> {$3:Nil} {",
+      "pub fn ${1:function_name}(${2}) -> ${3:Nil} {",
       "\t${0:todo}",
       "}"
     ],
