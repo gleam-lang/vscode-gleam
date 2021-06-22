@@ -2,7 +2,7 @@
   "name": "gleam",
   "displayName": "Gleam",
   "description": "Support for the Gleam programming language",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "publisher": "gleam",
   "repository": {
     "type": "git",
@@ -13,7 +13,8 @@
   },
   "categories": [
     "Programming Languages",
-    "Formatters"
+    "Formatters",
+    "Snippets"
   ],
   "icon": "images/icon.png",
   "contributes": {

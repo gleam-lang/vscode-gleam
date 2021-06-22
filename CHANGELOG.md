@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.0 - 2021-01-07
+
+- Snippets are now included.
+
 ## v1.2.0 - 2021-01-03
 
 - Format of save is now enabled by default.
