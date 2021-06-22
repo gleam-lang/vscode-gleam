@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Fixed a mistake in the `pub fn` snippet's return value.
+
 ## v1.3.0 - 2021-01-07
 
 - Snippets are now included.
