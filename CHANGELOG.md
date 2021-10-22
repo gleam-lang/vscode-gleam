@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Fixed a mistake in the `pub fn` snippet's return value.
+- Added syntax highlighting for binary, octal, and hexadecimal ints.
 
 ## v1.3.0 - 2021-01-07
 
