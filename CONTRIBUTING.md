@@ -16,6 +16,21 @@ with the local version of the extension loaded.
 
 ## Publishing a new version of the extension
 
+### VS Code marketplace
+
+```shell
+npx vsce package
+# now drag and drop the package file into the web GUI
+```
+
 <https://code.visualstudio.com/api/working-with-extensions/publishing-extension>
 
 <https://marketplace.visualstudio.com/manage/publishers/gleam>
+
+### Open VSX
+
+```shell
+npx ovsx publish --pat $TOKEN
+```
+
+You can get a token here, assuming you don't have one saved already. https://open-vsx.org/user-settings/tokens
