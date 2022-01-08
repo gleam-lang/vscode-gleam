@@ -2,16 +2,63 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from "vscode";
 import * as cp from "child_process";
+import * as path from 'path';
 
-export function activate(_context: vscode.ExtensionContext) {
+import {
+  TransportKind,
+	LanguageClient,
+	LanguageClientOptions,
+	ServerOptions
+} from 'vscode-languageclient/node';
+
+let client: LanguageClient;
+
+export function activate(context: vscode.ExtensionContext) {
   console.log('"VS Code-Gleam" started');
   vscode.languages.registerDocumentFormattingEditProvider("gleam", {
     provideDocumentFormattingEdits,
   });
+
+  // Language Server
+	const serverModule = context.asAbsolutePath(
+		path.join('lsp', 'out', 'server.js')
+	);
+	// --inspect=6009: runs the server in Node's Inspector mode so VS Code can attach to the server for debugging
+	const debugOptions = { execArgv: ['--nolazy', '--inspect=6009'] };
+	const serverOptions: ServerOptions = {
+		run: { module: serverModule, transport: TransportKind.ipc },
+		debug: {
+			module: serverModule,
+			transport: TransportKind.ipc,
+			options: debugOptions
+		}
+	};
+
+	const clientOptions: LanguageClientOptions = {
+		documentSelector: [{ language: 'gleam' }],
+		synchronize: {
+			fileEvents: vscode.workspace.createFileSystemWatcher('**/.clientrc')
+		}
+	};
+
+	client = new LanguageClient(
+		'GleamLS',
+		'Gleam Language Server',
+		serverOptions,
+		clientOptions
+	);
+
+	client.start();
+  console.log("Gleam Language Server Started")
 }
 
 // this method is called when your extension is deactivated
-export function deactivate() {}
+export function deactivate(): Thenable<void> | undefined {
+	if (!client) {
+		return undefined;
+	}
+	return client.stop();
+}
 
 function provideDocumentFormattingEdits(
   document: vscode.TextDocument

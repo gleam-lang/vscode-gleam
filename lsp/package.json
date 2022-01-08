@@ -1,0 +1,22 @@
+{
+	"name": "gleam-ls",
+	"description": "Language Server for Gleam",
+	"version": "1.0.0",
+	"author": "HarryET",
+	"license": "Apache-2.0",
+	"engines": {
+		"node": "*"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gleam-lang/vscode-gleam"
+	},
+	"dependencies": {
+		"vscode-languageserver": "^7.0.0",
+		"vscode-languageserver-textdocument": "^1.0.1"
+	},
+	"scripts": {
+        "build": "tsc",
+        "build:watch": "tsc -w"
+    }
+}
