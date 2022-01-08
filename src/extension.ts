@@ -42,7 +42,7 @@ export function activate(context: vscode.ExtensionContext) {
 	};
 
 	client = new LanguageClient(
-		'GleamLS',
+		'gleamLanguageServer',
 		'Gleam Language Server',
 		serverOptions,
 		clientOptions
