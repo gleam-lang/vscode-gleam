@@ -1,17 +1,12 @@
 import * as vscode from "vscode";
 import { LanguageClient } from "vscode-languageclient/node";
-import { provideDocumentFormattingEdits } from "./formatter";
 import { createLanguageClient } from "./lsp";
 
 let client: LanguageClient | undefined;
 
 export function activate(_context: vscode.ExtensionContext) {
-  vscode.languages.registerDocumentFormattingEditProvider("gleam", {
-    provideDocumentFormattingEdits,
-  });
-
-  // Start the client. This will also launch the server
   client = createLanguageClient();
+  // Start the client. This will also launch the server
   client.start();
 }
 
