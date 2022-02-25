@@ -1,6 +1,11 @@
 import * as vscode from "vscode";
-import { LanguageClient } from "vscode-languageclient/node";
-import { createLanguageClient } from "./lsp";
+import { workspace } from "vscode";
+import {
+  LanguageClient,
+  LanguageClientOptions,
+  ServerOptions,
+  TransportKind,
+} from "vscode-languageclient/node";
 
 let client: LanguageClient | undefined;
 
@@ -12,8 +17,35 @@ export function activate(_context: vscode.ExtensionContext) {
 
 // this method is called when your extension is deactivated
 export function deactivate(): Thenable<void> | undefined {
-  if (client) {
-    return client.stop();
-  }
-  return undefined;
+  return client?.stop();
+}
+
+function createLanguageClient(): LanguageClient {
+  let clientOptions: LanguageClientOptions = {
+    documentSelector: [{ scheme: "file", language: "gleam" }],
+    synchronize: {
+      fileEvents: [
+        workspace.createFileSystemWatcher("**/gleam.toml"),
+        workspace.createFileSystemWatcher("**/manifest.toml"),
+      ],
+    },
+  };
+
+  let serverOptions: ServerOptions = {
+    command: "gleam",
+    args: ["lsp"],
+    transport: TransportKind.stdio,
+    options: {
+      env: Object.assign(process.env, {
+        GLEAM_LOG: "info",
+      }),
+    },
+  };
+
+  return new LanguageClient(
+    "gleam_language_server",
+    "Gleam Language Server",
+    serverOptions,
+    clientOptions
+  );
 }
