@@ -38,6 +38,7 @@ function createLanguageClient(): LanguageClient {
     options: {
       env: Object.assign(process.env, {
         GLEAM_LOG: "info",
+        GLEAM_LOG_NOCOLOUR: "1",
       }),
     },
   };
