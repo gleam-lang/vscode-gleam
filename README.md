@@ -9,3 +9,8 @@ Gleam support for VS Code.
 - Syntax highlighting
 - Snippets
 - Code formatting
+
+
+## Hacking on the extension
+
+Run `npm run compile-watch` in a terminal and hit F5 in vscode.
