@@ -1,6 +1,10 @@
 # Changelog
 
-## Unreleased
+## v2.0.0 - 2022-04-16
+
+- This plugin is now powered by the Gleam Language Server!
+
+## v1.4.0 - 2021-10-22
 
 - Fixed a mistake in the `pub fn` snippet's return value.
 - Added syntax highlighting for binary, octal, and hexadecimal ints.
