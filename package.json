@@ -28,7 +28,11 @@
         "extensions": [
           ".gleam"
         ],
-        "configuration": "./language-configuration.json"
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./images/lucy-charcoal.svg",
+          "dark": "./images/lucy-pink.svg"
+        }
       }
     ],
     "grammars": [
@@ -46,7 +50,8 @@
     ],
     "configurationDefaults": {
       "[gleam]": {
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "gleam.gleam"
       }
     }
   },
