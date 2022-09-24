@@ -53,6 +53,17 @@
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "gleam.gleam"
       }
+    },
+    "configuration": {
+      "title": "Gleam",
+      "properties": {
+        "gleam.path": {
+          "type": "string",
+          "default": null,
+          "description": "A path to the gleam executable. By default, the extension looks for gleam in the PATH, but if set, will use the path specified instead.",
+          "scope": "machine"
+        }
+      }
     }
   },
   "activationEvents": [
