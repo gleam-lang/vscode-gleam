@@ -3,7 +3,16 @@
   "name": "Gleam",
   "patterns": [
     {
+      "include": "#support"
+    },
+    {
+      "include": "#punctuation"
+    },
+    {
       "include": "#comments"
+    },
+    {
+      "include": "#entity"
     },
     {
       "include": "#keywords"
@@ -13,17 +22,74 @@
     },
     {
       "include": "#constant"
-    },
-    {
-      "include": "#entity"
     }
   ],
   "repository": {
+    "support": {
+      "patterns": [
+        {
+          "name": "support.function.gleam",
+          "match": "\\b(todo)\\b"
+        },
+        {
+          "name": "support.type.gleam",
+          "match": "\\b(BitString|Bool|Float|Int|List|Result|String|UtfCodepoint)\\b"
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.accessor.gleam",
+          "match": "(\\.)"
+        },
+        {
+          "name": "punctuation.separator.comma.gleam",
+          "match": "(,)"
+        }
+      ]
+    },
     "keywords": {
       "patterns": [
         {
-          "name": "keyword.control.gleam",
-          "match": "\\b(case|if|external|fn|import|let|assert|try|pub|type|opaque|const|todo)\\b"
+          "name": "keyword.control.case.gleam",
+          "match": "\\b(case)\\b"
+        },
+        {
+          "name": "keyword.control.conditional.gleam",
+          "match": "\\b(if)\\b"
+        },
+        {
+          "name": "keyword.control.trycatch.gleam",
+          "match": "\\b(try|assert)\\b"
+        },
+        {
+          "name": "storage.type.modifier.gleam",
+          "match": "\\b(opaque|external)\\b"
+        },
+        {
+          "name": "keyword.control.export.gleam",
+          "match": "\\b(pub)\\b"
+        },
+        {
+          "name": "storage.type.gleam",
+          "match": "\\b(let|const|fn)\\b"
+        },
+        {
+          "name": "storage.type.class.gleam",
+          "match": "\\b(type)\\b"
+        },
+        {
+          "name": "keyword.control.import.gleam",
+          "match": "\\b(import)\\b"
+        },
+        {
+          "name": "keyword.control.as.gleam",
+          "match": "\\b(as)\\b"
+        },
+        {
+          "name": "keyword.operator.type.annotation.gleam",
+          "match": ":"
         },
         {
           "name": "keyword.operator.arrow.gleam",
@@ -52,6 +118,10 @@
         {
           "name": "keyword.operator.other.gleam",
           "match": "\\|"
+        },
+        {
+          "name": "keyword.operator.match.gleam",
+          "match": "="
         },
         {
           "name": "keyword.operator.arithmetic.float.gleam",
@@ -104,6 +174,10 @@
           "include": "#boolean"
         },
         {
+          "name": "constant.language.null.gleam",
+          "match": "\\b(Nil)\\b"
+        },
+        {
           "name": "entity.name.type.gleam",
           "match": "[[:upper:]][[:word:]]*"
         }
@@ -137,6 +211,29 @@
     "entity": {
       "patterns": [
         {
+          "match": "(import)\\s([a-z])*",
+          "captures": {
+            "1": {
+              "name": "keyword.control.import.gleam"
+            },
+            "0": {
+              "name": "entity.name.import.gleam"
+            }
+          }
+          
+        },
+        {
+          "match": "(\\|>)\\s(\\w*\\b)\\b",
+          "captures": {
+            "1": {
+              "name": "keyword.operator.pipe.gleam"
+            },
+            "0": {
+              "name": "entity.name.function.gleam"
+            }
+          }
+        },
+        {
           "begin": "\\b([[:lower:]][[:word:]]*)([[:space:]]*)?\\(",
           "end": "\\)",
           "patterns": [
@@ -147,6 +244,17 @@
           "captures": {
             "1": {
               "name": "entity.name.function.gleam"
+            }
+          }
+        },
+        {
+          "match": "(\\bconst|\\blet)\\s(\\w+)",
+          "captures": {
+            "1": {
+              "name":"storage.type.gleam"
+            },
+            "0": {
+              "name":"variable.other.local.gleam"
             }
           }
         },
