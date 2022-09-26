@@ -227,13 +227,13 @@
           }
         },
         {
-          "match": "(\"\\w+\") (\"\\w+\")",
+          "match": "(\"\\w+(?:\\/*\\w+\\.{1}(?:js|mjs|cjs)+)*\") (\"\\w+\")",
           "captures": {
             "1": {
-              "name": "entity.name.import.external.gleam"
+              "name": "string.other.external.module.gleam"
             },
             "2": {
-              "name": "entity.name.function.external.gleam"
+              "name": "string.other.external.function.gleam"
             }
           }
         },
