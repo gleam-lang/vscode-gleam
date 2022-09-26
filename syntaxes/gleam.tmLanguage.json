@@ -238,10 +238,10 @@
           }
         },
         {
-          "match": "(import)\\s(\\w*)(?:\/|\\.|\\b)(\\w+)",
+          "match": "(\\bimport\\b)(\\s\\w+)|\\/([a-z_]+)",
           "captures": {
             "0": {
-              "name": "meta.import.gleam"
+              "name":"meta.import.gleam"
             },
             "1": {
               "name": "keyword.control.import.gleam"
