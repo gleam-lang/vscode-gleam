@@ -1,6 +1,6 @@
 # Changelog
 
-## v2.1.0 - unreleased
+## v2.1.0 - 2022-12-20
 
 - File icon added.
 - Added syntax highlighting for `<>` and `use`.
