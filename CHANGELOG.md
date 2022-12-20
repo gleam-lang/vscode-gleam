@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.1.0 - unreleased
+
+- File icon added.
+
 ## v2.0.0 - 2022-04-16
 
 - This plugin is now powered by the Gleam Language Server!
