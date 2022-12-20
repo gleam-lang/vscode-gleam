@@ -3,6 +3,7 @@
 ## v2.1.0 - unreleased
 
 - File icon added.
+- Added syntax highlighting for `<>` and `use`.
 
 ## v2.0.0 - 2022-04-16
 
