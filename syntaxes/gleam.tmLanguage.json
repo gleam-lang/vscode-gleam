@@ -3,7 +3,13 @@
   "name": "Gleam",
   "patterns": [
     {
+      "include": "#support"
+    },
+    {
       "include": "#comments"
+    },
+    {
+      "include": "#entity"
     },
     {
       "include": "#keywords"
@@ -15,15 +21,83 @@
       "include": "#constant"
     },
     {
-      "include": "#entity"
+      "include": "#punctuation"
     }
   ],
   "repository": {
+    "support": {
+      "patterns": [
+        {
+          "name": "support.function.gleam",
+          "match": "\\b(todo)\\b"
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.accessor.gleam",
+          "match": "(\\.)"
+        },
+        {
+          "name": "punctuation.separator.comma.gleam",
+          "match": "(,)"
+        }
+      ]
+    },
     "keywords": {
       "patterns": [
         {
-          "name": "keyword.control.gleam",
-          "match": "\\b(use|case|if|external|fn|import|let|assert|try|pub|type|opaque|const|todo)\\b"
+          "name": "keyword.control.case.gleam",
+          "match": "\\b(case)\\b"
+        },
+        {
+          "name": "keyword.control.conditional.gleam",
+          "match": "\\b(if)\\b"
+        },
+        {
+          "name": "keyword.control.trycatch.gleam",
+          "match": "\\b(try|assert)\\b"
+        },
+        {
+          "name": "storage.type.modifier.gleam",
+          "match": "\\b(opaque|external)\\b"
+        },
+        {
+          "name": "keyword.control.export.gleam",
+          "match": "\\b(pub)\\b"
+        },
+        {
+          "name": "storage.type.gleam",
+          "match": "\\b(let|const)\\b"
+        },
+        {
+          "name": "storage.type.function.gleam",
+          "match": "\\b(fn)\\b"
+        },
+        {
+          "name": "storage.type.class.gleam",
+          "match": "\\b(type)\\b"
+        },
+        {
+          "name": "keyword.control.import.gleam",
+          "match": "\\b(import)\\b"
+        },
+        {
+          "name": "keyword.control.as.gleam",
+          "match": "\\b(as)\\b"
+        },
+        {
+          "name": "keyword.control.use.gleam",
+          "match": "\\b(use)\\b"
+        },
+        {
+          "name": "keyword.operator.tuple.gleam",
+          "match": "#"
+        },
+        {
+          "name": "keyword.operator.type.annotation.gleam",
+          "match": ":"
         },
         {
           "name": "keyword.operator.arrow.gleam",
@@ -56,6 +130,10 @@
         {
           "name": "keyword.operator.other.gleam",
           "match": "\\|"
+        },
+        {
+          "name": "keyword.operator.match.gleam",
+          "match": "="
         },
         {
           "name": "keyword.operator.arithmetic.float.gleam",
@@ -141,15 +219,76 @@
     "entity": {
       "patterns": [
         {
-          "begin": "\\b([[:lower:]][[:word:]]*)([[:space:]]*)?\\(",
-          "end": "\\)",
-          "patterns": [
-            {
-              "include": "$self"
-            }
-          ],
+          "match": "[^\\w*](_+\\w*\\b)",
           "captures": {
             "1": {
+              "name": "source.ignore.gleam"
+            }
+          }
+        },
+        {
+          "match": "(\"\\w+(?:\\/*\\w+\\.{1}(?:js|mjs|cjs)+)*\") (\"\\w+\")",
+          "captures": {
+            "1": {
+              "name": "string.other.external.module.gleam"
+            },
+            "2": {
+              "name": "string.other.external.function.gleam"
+            }
+          }
+        },
+        {
+          "match": "(\\bimport\\b)(\\s\\w+)|\\/([a-z_]+)",
+          "captures": {
+            "0": {
+              "name":"meta.import.gleam"
+            },
+            "1": {
+              "name": "keyword.control.import.gleam"
+            },
+            "2": {
+              "name": "entity.name.import.gleam"
+            },
+            "3": {
+              "name": "variable.other.constant.gleam"
+            }
+          }
+        },
+        {
+          "match": "\\b((?!\\bfn\\b)[a-z][a-z_]*)\\(",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.gleam"
+            }
+          }
+        },
+        {
+          "match": "(?:{| |, |\\/|\\.|\\[|\\()(\\.\\.)*(?!\\bas\\b|\\blet\\b|\\bfn\\b|\\buse\\b|\\bconst\\b|\\bcase\\b|\\btry\\b|\\bassert\\b|\\bif\\b|\\bopaque\\b|\\bexternal\\b|\\btype\\b|\\b_+\\w*\\b|\\blet _+\\w*\\b)(\\w+\\()*([a-z_]+)(?!\\/|\\(|:)\\b",
+          "captures": {
+            "1": {
+              "name": "keyword.operator.splat.gleam"
+            },
+            "2": {
+              "name": "entity.name.function.gleam"
+            },
+            "3": {
+              "name": "variable.other.gleam"
+            }
+          }
+        },
+        {
+          "match": "(\\|>)\\s(\\w+(?=\\.{1}))*(\\.){0,1}(\\w*\\b)",
+          "captures": {
+            "1": {
+              "name": "keyword.operator.pipe.gleam"
+            },
+            "2": {
+              "name": "variable.other.gleam"
+            },
+            "3": {
+              "name": "punctuation.accessor.gleam"
+            },
+            "4": {
               "name": "entity.name.function.gleam"
             }
           }

@@ -2,7 +2,7 @@
   "name": "gleam",
   "displayName": "Gleam",
   "description": "Support for the Gleam programming language",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "publisher": "gleam",
   "repository": {
     "type": "git",
@@ -30,8 +30,8 @@
         ],
         "configuration": "./language-configuration.json",
         "icon": {
-          "light": "./images/gleam-logo.png",
-          "dark": "./images/gleam-logo.png"
+          "light": "./images/lucy-charcoal.svg",
+          "dark": "./images/lucy-pink.svg"
         }
       }
     ],
@@ -50,7 +50,19 @@
     ],
     "configurationDefaults": {
       "[gleam]": {
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "gleam.gleam"
+      }
+    },
+    "configuration": {
+      "title": "Gleam",
+      "properties": {
+        "gleam.path": {
+          "type": "string",
+          "default": null,
+          "description": "A path to the gleam executable. By default, the extension looks for gleam in the PATH, but if set, will use the path specified instead.",
+          "scope": "machine"
+        }
       }
     }
   },
