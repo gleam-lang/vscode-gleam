@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.1.0 - 2022-12-20
+
+- File icon added.
+- Added syntax highlighting for `<>` and `use`.
+
 ## v2.0.0 - 2022-04-16
 
 - This plugin is now powered by the Gleam Language Server!

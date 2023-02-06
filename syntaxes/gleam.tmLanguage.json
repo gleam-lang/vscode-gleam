@@ -101,7 +101,7 @@
         },
         {
           "name": "keyword.operator.arrow.gleam",
-          "match": "->"
+          "match": "(<\\-|\\->)"
         },
         {
           "name": "keyword.operator.pipe.gleam",
@@ -122,6 +122,10 @@
         {
           "name": "keyword.operator.logical.gleam",
           "match": "(&&|\\|\\|)"
+        },
+        {
+          "name": "keyword.operator.string.gleam",
+          "match": "<>"
         },
         {
           "name": "keyword.operator.other.gleam",
