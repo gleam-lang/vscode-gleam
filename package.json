@@ -2,7 +2,7 @@
   "name": "gleam",
   "displayName": "Gleam",
   "description": "Support for the Gleam programming language",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "publisher": "gleam",
   "repository": {
     "type": "git",
@@ -66,6 +66,9 @@
       }
     }
   },
+  "activationEvents": [
+    "onLanguage:gleam"
+  ],
   "main": "./out/extension.js",
   "scripts": {
     "vscode:prepublish": "webpack --mode production",

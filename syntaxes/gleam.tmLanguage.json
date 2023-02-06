@@ -30,10 +30,6 @@
         {
           "name": "support.function.gleam",
           "match": "\\b(todo)\\b"
-        },
-        {
-          "name": "support.type.prelude.gleam",
-          "match": "\\b(BitString|Bool|Float|Int|List|Result|String|UtfCodepoint)\\b"
         }
       ]
     },
@@ -90,6 +86,10 @@
         {
           "name": "keyword.control.as.gleam",
           "match": "\\b(as)\\b"
+        },
+        {
+          "name": "keyword.control.use.gleam",
+          "match": "\\b(use)\\b"
         },
         {
           "name": "keyword.operator.tuple.gleam",
@@ -186,10 +186,6 @@
           "include": "#boolean"
         },
         {
-          "name": "constant.language.null.gleam",
-          "match": "\\b(Nil)\\b"
-        },
-        {
           "name": "entity.name.type.gleam",
           "match": "[[:upper:]][[:word:]]*"
         }
@@ -267,7 +263,7 @@
           }
         },
         {
-          "match": "(?:{| |, |\\/|\\.|\\[|\\()(\\.\\.)*(?!\\bas\\b|\\blet\\b|\\bfn\\b|\\bconst\\b|\\bcase\\b|\\btry\\b|\\bassert\\b|\\bif\\b|\\bopaque\\b|\\bexternal\\b|\\btype\\b|\\b_+\\w*\\b|\\blet _+\\w*\\b)(\\w+\\()*([a-z_]+)(?!\\/|\\(|:)\\b",
+          "match": "(?:{| |, |\\/|\\.|\\[|\\()(\\.\\.)*(?!\\bas\\b|\\blet\\b|\\bfn\\b|\\buse\\b|\\bconst\\b|\\bcase\\b|\\btry\\b|\\bassert\\b|\\bif\\b|\\bopaque\\b|\\bexternal\\b|\\btype\\b|\\b_+\\w*\\b|\\blet _+\\w*\\b)(\\w+\\()*([a-z_]+)(?!\\/|\\(|:)\\b",
           "captures": {
             "1": {
               "name": "keyword.operator.splat.gleam"
