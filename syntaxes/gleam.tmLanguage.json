@@ -23,7 +23,7 @@
       "patterns": [
         {
           "name": "keyword.control.gleam",
-          "match": "\\b(use|case|if|external|fn|import|let|assert|try|pub|type|opaque|const|todo)\\b"
+          "match": "\\b(use|case|if|external|fn|import|let|assert|try|pub|type|opaque|const|todo|panic)\\b"
         },
         {
           "name": "keyword.operator.arrow.gleam",

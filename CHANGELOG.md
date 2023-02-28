@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.2.0 - 2023-02-28
+
+- Updated syntax highlighting for Gleam v0.27.0 with `panic`.
+
 ## v2.1.0 - 2022-12-20
 
 - File icon added.
