@@ -1,8 +1,9 @@
 # Changelog
 
-## Unreleased
+## v2.3.0 - 2023-05-30
 
 - Comments are now continued on the next line when entering a newline.
+- Updated syntax highlighting for Gleam v0.29.0.
 
 ## v2.2.0 - 2023-02-28
 
