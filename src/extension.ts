@@ -8,8 +8,15 @@ import {
 } from "vscode-languageclient/node";
 
 let client: LanguageClient | undefined;
+let configureLang: vscode.Disposable | undefined;
 
 export function activate(_context: vscode.ExtensionContext) {
+  const onEnterRules = [...continueTypingCommentsOnNewline()];
+
+  configureLang = vscode.languages.setLanguageConfiguration("gleam", {
+    onEnterRules,
+  });
+
   client = createLanguageClient();
   // Start the client. This will also launch the server
   client.start();
@@ -17,6 +24,8 @@ export function activate(_context: vscode.ExtensionContext) {
 
 // this method is called when your extension is deactivated
 export function deactivate(): Thenable<void> | undefined {
+  configureLang?.dispose();
+
   return client?.stop();
 }
 
@@ -49,4 +58,29 @@ function createLanguageClient(): LanguageClient {
     serverOptions,
     clientOptions
   );
+}
+
+/**
+ * Returns the `OnEnterRule`s needed to configure typing comments on a newline.
+ *
+ * This makes it so when you press `Enter` while in a comment it will continue
+ * the comment onto the next line.
+ */
+function continueTypingCommentsOnNewline(): vscode.OnEnterRule[] {
+  const indentAction = vscode.IndentAction.None;
+
+  return [
+    {
+      // Module doc single-line comment
+      // e.g. ////|
+      beforeText: /^\s*\/{4}.*$/,
+      action: { indentAction, appendText: "//// " },
+    },
+    {
+      // Doc single-line comment
+      // e.g. ///|
+      beforeText: /^\s*\/{3}.*$/,
+      action: { indentAction, appendText: "/// " },
+    },
+  ];
 }
