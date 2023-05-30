@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Comments are now continued on the next line when entering a newline.
+
 ## v2.2.0 - 2023-02-28
 
 - Updated syntax highlighting for Gleam v0.27.0 with `panic`.
