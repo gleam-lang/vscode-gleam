@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.4.0 - 2023-07-23
+
+- Snippets update for Gleam v0.30.0.
+- `as` added as a keyword.
+
 ## v2.3.0 - 2023-05-30
 
 - Comments are now continued on the next line when entering a newline.
