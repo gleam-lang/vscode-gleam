@@ -1,13 +1,4 @@
 {
-  "Function": {
-    "prefix": [
-      "fn"
-    ],
-    "body": [
-      "fn(${1}) { ${0} }"
-    ],
-    "description": "anonymous function"
-  },
   "Public Function": {
     "prefix": [
       "pub",
@@ -19,6 +10,17 @@
       "}"
     ],
     "description": "public function"
+  },
+  "Private Function": {
+    "prefix": [
+      "fn"
+    ],
+    "body": [
+      "fn ${1:function_name}(${2}) -> ${3:Nil} {",
+      "\t${0:todo}",
+      "}"
+    ],
+    "description": "private function"
   },
   "Test Function": {
     "prefix": [
@@ -41,32 +43,32 @@
     ],
     "description": "anonymous function"
   },
-  "Let Binding": {
+  "Let assignment": {
     "prefix": [
       "let"
     ],
     "body": [
       "let ${1} = ${0}"
     ],
-    "description": "let binding"
+    "description": "let assignment"
   },
-  "Assert Binding": {
+  "Let Assert assignment": {
     "prefix": [
-      "as"
+      "leta"
     ],
     "body": [
-      "assert ${1} = ${0}"
+      "let assert ${1} = ${0}"
     ],
-    "description": "assert binding"
+    "description": "let assert assignment"
   },
-  "Try Binding": {
+  "Use expression": {
     "prefix": [
-      "tr"
+      "use"
     ],
     "body": [
-      "try ${1} = ${0}"
+      "use ${1} <- ${0}"
     ],
-    "description": "try binding"
+    "description": "use expression"
   },
   "Case Expression": {
     "prefix": [
@@ -103,16 +105,14 @@
     ],
     "description": "public type declaration"
   },
-  "External Function": {
+  "External attribute": {
     "prefix": [
-      "exfn",
-      "external",
-      "external fn"
+      "external"
     ],
     "body": [
-      "external fn ${1:function_name}(${2}) -> ${3:Nil} = \"$4\" \"$0\""
+      "@external(${1:erlang}, \"${2}\", \"${0}\")"
     ],
-    "description": "external function"
+    "description": "external attribute"
   },
   "Public External Function": {
     "prefix": [
@@ -158,13 +158,13 @@
   },
   "Tuple": {
     "prefix": [
-      "tup",
+      "#",
       "tuple"
     ],
     "body": [
-      "tuple(${0})"
+      "#(${0})"
     ],
-    "description": "tuple()"
+    "description": "tuple #()"
   },
   "Block": {
     "prefix": [
