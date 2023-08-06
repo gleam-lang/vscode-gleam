@@ -7,15 +7,40 @@ import {
   TransportKind,
 } from "vscode-languageclient/node";
 
+const enum GleamCommands {
+  RestartServer = "gleam.restartServer",
+}
+
 let client: LanguageClient | undefined;
 let configureLang: vscode.Disposable | undefined;
 
-export function activate(_context: vscode.ExtensionContext) {
+export function activate(context: vscode.ExtensionContext) {
   const onEnterRules = [...continueTypingCommentsOnNewline()];
 
   configureLang = vscode.languages.setLanguageConfiguration("gleam", {
     onEnterRules,
   });
+
+  const restartCommand = vscode.commands.registerCommand(GleamCommands.RestartServer, async () => {
+    if(!client) {
+      vscode.window.showErrorMessage("gleam client not found");
+      return
+    }
+
+    try {
+			if (client.isRunning()) {
+				await client.restart();
+
+        vscode.window.showInformationMessage("gleam server restarted.");
+			} else {
+				await client.start();
+			}
+		} catch (err) {
+			client.error("Restarting client failed", err, "force");
+		}
+  });
+
+  context.subscriptions.push(restartCommand);
 
   client = createLanguageClient();
   // Start the client. This will also launch the server
