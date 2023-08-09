@@ -21,24 +21,27 @@ export function activate(context: vscode.ExtensionContext) {
     onEnterRules,
   });
 
-  const restartCommand = vscode.commands.registerCommand(GleamCommands.RestartServer, async () => {
-    if (!client) {
-      vscode.window.showErrorMessage("gleam client not found");
-      return;
-    }
-
-    try {
-      if (client.isRunning()) {
-        await client.restart();
-
-        vscode.window.showInformationMessage("gleam server restarted.");
-      } else {
-        await client.start();
+  const restartCommand = vscode.commands.registerCommand(
+    GleamCommands.RestartServer,
+    async () => {
+      if (!client) {
+        vscode.window.showErrorMessage("gleam client not found");
+        return;
       }
-    } catch (err) {
-      client.error("Restarting client failed", err, "force");
+
+      try {
+        if (client.isRunning()) {
+          await client.restart();
+
+          vscode.window.showInformationMessage("gleam server restarted.");
+        } else {
+          await client.start();
+        }
+      } catch (err) {
+        client.error("Restarting client failed", err, "force");
+      }
     }
-  });
+  );
 
   context.subscriptions.push(restartCommand);
 
