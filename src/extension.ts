@@ -40,7 +40,7 @@ export function activate(context: vscode.ExtensionContext) {
       } catch (err) {
         client.error("Restarting client failed", err, "force");
       }
-    }
+    },
   );
 
   context.subscriptions.push(restartCommand);
@@ -84,7 +84,7 @@ function createLanguageClient(): LanguageClient {
     "gleam_language_server",
     "Gleam Language Server",
     serverOptions,
-    clientOptions
+    clientOptions,
   );
 }
 
