@@ -71,7 +71,6 @@ function createLanguageClient(): LanguageClient {
   let serverOptions: ServerOptions = {
     command: "gleam",
     args: ["lsp"],
-    transport: TransportKind.stdio,
     options: {
       env: Object.assign(process.env, {
         GLEAM_LOG: "info",
