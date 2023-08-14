@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.5.1 - 2023-08-14
+
+- Fix a bug where the language server would not start.
+
 ## v2.5.0 - 2023-08-14
 
 - A command has been added to restart the language server.
