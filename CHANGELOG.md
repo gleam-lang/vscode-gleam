@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.5.0 - 2023-08-14
+
+- A command has been added to restart the language server.
+
 ## v2.4.0 - 2023-07-23
 
 - Snippets update for Gleam v0.30.0.
