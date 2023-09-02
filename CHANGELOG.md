@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- `external` is no longer highlighted as a keyword.
+
 ## v2.5.1 - 2023-08-14
 
 - Fix a bug where the language server would not start.
