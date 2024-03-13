@@ -1,7 +1,8 @@
 # Changelog
 
-## Unreleased
+## v2.6.0 - 2024-03-13
 
+- The logo has been updated to the new Gleam logo.
 - `external` is no longer highlighted as a keyword.
 
 ## v2.5.1 - 2023-08-14
