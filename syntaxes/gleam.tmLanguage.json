@@ -125,7 +125,7 @@
     },
     "decimal_number": {
       "name": "constant.numeric.decimal.gleam",
-      "match": "\\b[[:digit:]]+(_?[[:digit:]])*(\\.[[:digit:]]*)?(e-?[[:digit:]])?\\b",
+      "match": "\\b[[:digit:]]+(_?[[:digit:]])*(\\.[[:digit:]]*)?(e-?[[:digit:]]*)?\\b",
       "patterns": []
     },
     "hexadecimal_number": {
