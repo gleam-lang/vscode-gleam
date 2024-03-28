@@ -4,7 +4,7 @@
 
 - The icon has been updated to the new Gleam logo.
 - Scientific notion is now highlighted.
-- Path to gleam executable can now be specified in settings
+- Path to gleam executable can now be specified in settings.
 
 ## v2.6.0 - 2024-03-13
 
