@@ -69,6 +69,7 @@
     "compile-watch": "webpack --mode development --watch",
     "test-compile": "tsc -p ./",
     "vscode:package": "vsce package",
+    "format-check": "prettier ./**/*.ts --check",
     "format": "prettier ./**/*.ts --write --cache"
   },
   "devDependencies": {
