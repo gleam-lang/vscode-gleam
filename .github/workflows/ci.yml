@@ -1,15 +1,9 @@
 name: CI
 on: [push]
 jobs:
-  format-check:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: npm ci
-      - run: npm run format-check
-  test-compile:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
       - run: npm ci
       - run: npm run test-compile
+      - run: npm run format-check
