@@ -2,9 +2,8 @@
 
 [![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/Gleam.gleam?label=Visual%20Studio%20Marketplace&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=Gleam.gleam)
 
-Gleam support for VS Code using the Gleam Language Server.
-
-Provides syntax highlighting and autocompletion for the Gleam language.
+Provides syntax highlighting and use of the Gleam Language Server, which itself
+provides formatting, goto-definition, autocompletion, and more!
 
 ## Hacking on the extension
 
