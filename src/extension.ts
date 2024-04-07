@@ -59,16 +59,16 @@ export function deactivate(): Thenable<void> | undefined {
 }
 
 async function createLanguageClient(): Promise<LanguageClient | undefined> {
-  let command = await getGleamCommandPath();
+  const command = await getGleamCommandPath();
   if (!command) {
-    let message = `Could not resolve Gleam executable. Please ensure it is available
+    const message = `Could not resolve Gleam executable. Please ensure it is available
     on the PATH used by VS Code or set an explicit "gleam.path" setting to a valid Gleam executable.`;
 
     vscode.window.showErrorMessage(message);
     return;
   }
 
-  let clientOptions: LanguageClientOptions = {
+  const clientOptions: LanguageClientOptions = {
     documentSelector: [{ scheme: "file", language: "gleam" }],
     synchronize: {
       fileEvents: [
@@ -78,7 +78,7 @@ async function createLanguageClient(): Promise<LanguageClient | undefined> {
     },
   };
 
-  let serverOptions: ServerOptions = {
+  const serverOptions: ServerOptions = {
     command,
     args: ["lsp"],
     options: {
@@ -124,14 +124,14 @@ function continueTypingCommentsOnNewline(): vscode.OnEnterRule[] {
 
 /** Returns the absolute path to a gleam command. */
 export async function getGleamCommandPath(): Promise<string | undefined> {
-  let command = getWorkspaceConfigGleamExePath();
-  let workspaceFolders = vscode.workspace.workspaceFolders;
+  const command = getWorkspaceConfigGleamExePath();
+  const workspaceFolders = vscode.workspace.workspaceFolders;
   if (!command || !workspaceFolders) {
     return command ?? "gleam";
   } else if (!path.isAbsolute(command)) {
     // if sent a relative path, iterate over workspace folders to try and resolve.
-    for (let workspace of workspaceFolders) {
-      let commandPath = path.resolve(workspace.uri.fsPath, command);
+    for (const workspace of workspaceFolders) {
+      const commandPath = path.resolve(workspace.uri.fsPath, command);
       if (await fileExists(commandPath)) {
         return commandPath;
       }
@@ -144,7 +144,7 @@ export async function getGleamCommandPath(): Promise<string | undefined> {
 const EXTENSION_NS = "gleam";
 
 function getWorkspaceConfigGleamExePath(): string | undefined {
-  let exePath = vscode.workspace.getConfiguration(EXTENSION_NS).get("path");
+  const exePath = vscode.workspace.getConfiguration(EXTENSION_NS).get("path");
   // it is possible for the path to be blank. In that case, return undefined
   if (typeof exePath !== "string" || !exePath || exePath.trim().length === 0) {
     return undefined;
