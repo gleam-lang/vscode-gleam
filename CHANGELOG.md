@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v2.7.0 - 2024-04-07
 
 - The icon has been updated to the new Gleam logo.
 - Scientific notion is now highlighted.
