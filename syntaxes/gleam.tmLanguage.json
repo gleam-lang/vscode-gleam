@@ -24,14 +24,35 @@
       "include": "#let"
     },
     {
+      "include": "#dot_expressions"
+    },
+    {
       "include": "#any_string_of_lowercase_text_with_underscore_and_number"
     }
   ],
   "repository": {
+    "dot_expressions": {
+      "patterns": [
+        {
+          "match": "([a-z0-9_]+)(\\.)((?:(?!\\()[a-z0-9_])+)",
+          "captures": {
+            "1": {
+              "name": "support.class.gleam"
+            },
+            "2": {
+              "name": "punctuation.gleam"
+            },
+            "3": {
+              "name": "entity.name.function.gleam"
+            }
+          }
+        }
+      ]
+    },
     "any_string_of_lowercase_text_with_underscore_and_number": {
       "match": "(\\b[a-z0-9_]+\\b)",
       "name": "variable.other.readwrite"
-    }
+    },
     "let": {
       "patterns": [
         {
