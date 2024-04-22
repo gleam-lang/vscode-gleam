@@ -16,14 +16,58 @@
     },
     {
       "include": "#entity"
+    },
+    {
+      "include": "#import"
     }
   ],
   "repository": {
+    "import": {
+      "patterns": [
+        {
+          "begin": "(import)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.gleam"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#inside_import"
+            }
+          ],
+          "end": "(^(?=.{0,1})(?:|))",
+          "endCaptures": {
+            "1": {
+              "name": "keyword.gleam"
+            }
+          }
+        }
+      ]
+    },
+    "inside_import": {
+      "patterns": [
+        {
+          "match": "(.+)(\\/)(.+)",
+          "captures": {
+            "1": {
+              "name": "support.class"
+            },
+            "2": {
+              "name": "punctuation.gleam"
+            },
+            "3": {
+              "name": "variable.other.object"
+            }
+          }
+        }
+      ]
+    },
     "keywords": {
       "patterns": [
         {
           "name": "keyword.control.gleam",
-          "match": "\\b(as|use|case|if|fn|import|let|assert|pub|type|opaque|const|todo|panic)\\b"
+          "match": "\\b(as|use|case|if|fn|let|assert|pub|type|opaque|const|todo|panic)\\b"
         },
         {
           "name": "keyword.operator.arrow.gleam",
@@ -86,7 +130,7 @@
       "patterns": [
         {
           "name": "comment.line.gleam",
-          "match": "\/\/.*"
+          "match": "//.*"
         }
       ]
     },
