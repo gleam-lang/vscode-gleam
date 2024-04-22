@@ -19,9 +19,47 @@
     },
     {
       "include": "#import"
+    },
+    {
+      "include": "#let"
     }
   ],
   "repository": {
+    "let": {
+      "patterns": [
+        {
+          "begin": "(let)",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type.gleam"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#inside_let"
+            }
+          ],
+          "end": "(=)",
+          "endCaptures": {
+            "1": {
+              "name": "keyword.operator.assignment.gleam"
+            }
+          }
+        }
+      ]
+    },
+    "inside_let": {
+      "patterns": [
+        {
+          "match": "([a-z_0-9]+)",
+          "name": "variable.other.readwrite.gleam"
+        },
+        {
+          "match": "(assert)",
+          "name": "keyword.gleam"
+        }
+      ]
+    },
     "import": {
       "patterns": [
         {
@@ -67,7 +105,7 @@
       "patterns": [
         {
           "name": "keyword.control.gleam",
-          "match": "\\b(as|use|case|if|fn|let|assert|pub|type|opaque|const|todo|panic)\\b"
+          "match": "\\b(as|use|case|if|fn|assert|pub|type|opaque|const|todo|panic)\\b"
         },
         {
           "name": "keyword.operator.arrow.gleam",
