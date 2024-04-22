@@ -141,7 +141,7 @@
     "entity": {
       "patterns": [
         {
-          "begin": "\\b([[:lower:]][[:word:]]*)([[:space:]]*)?\\(",
+          "begin": "(?:([[:lower:]][[:word:]]*)\\.|(?!\\.)\\b)([[:lower:]][[:word:]]*)([[:space:]]*)?\\(",
           "end": "\\)",
           "patterns": [
             {
@@ -150,7 +150,10 @@
           ],
           "captures": {
             "1": {
-              "name": "entity.name.function.gleam"
+              "name": "support.class"
+            },
+            "2": {
+              "name": "entity.name.function.gleams"
             }
           }
         },
