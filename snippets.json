@@ -107,7 +107,7 @@
   },
   "External attribute": {
     "prefix": [
-      "external"
+      "@external"
     ],
     "body": [
       "@external(${1:erlang}, \"${2}\", \"${0}\")"
