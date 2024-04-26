@@ -9,4 +9,4 @@ provides formatting, goto-definition, autocompletion, and more!
 
 Run `npm run compile-watch` in a terminal and hit F5 in vscode.
 
-Contribute to the extension on [Github](https://github.com/gleam-lang/gleam)
+Contribute to the extension on [Github](https://github.com/gleam-lang/vscode-gleam)
