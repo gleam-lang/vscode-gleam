@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.8.0 - 2024-04-30
+
+- Improved the `external` snippet trigger to avoid rendering `@@external`.
+
 ## v2.7.0 - 2024-04-07
 
 - The icon has been updated to the new Gleam logo.
