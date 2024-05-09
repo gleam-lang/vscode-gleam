@@ -31,6 +31,24 @@
     }
   ],
   "repository": {
+    "type_select_expression": {
+      "patterns": [
+        {
+          "match": "([a-z0-9_]+)(\\.)([A-Z](?:[A-Za-z0-9_])+)",
+          "captures": {
+            "1": {
+              "name": "support.class.gleam"
+            },
+            "2": {
+              "name": "punctuation.gleam"
+            },
+            "3": {
+              "name": "entity.name.type.gleam"
+            }
+          }
+        }
+      ]
+    },
     "dot_expressions": {
       "patterns": [
         {
@@ -79,12 +97,11 @@
     "inside_let": {
       "patterns": [
         {
-          "match": "([a-z_0-9]+)",
-          "name": "variable.other.readwrite.gleam"
+          "include": "#type_select_expression"
         },
         {
-          "match": "(assert)",
-          "name": "keyword.gleam"
+          "match": "\\b(assert)\\b",
+          "name": "keyword.control.gleam"
         }
       ]
     },
