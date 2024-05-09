@@ -34,7 +34,7 @@
     "type_select_expression": {
       "patterns": [
         {
-          "match": "([a-z0-9_]+)(\\.)([A-Z](?:[A-Za-z0-9_])+)",
+          "match": "(?:([a-z0-9_]+)(\\.))?([A-Z](?:[A-Za-z0-9_])+)",
           "captures": {
             "1": {
               "name": "support.class.gleam"
@@ -98,6 +98,9 @@
       "patterns": [
         {
           "include": "#type_select_expression"
+        },
+        {
+          "include": "#any_string_of_lowercase_text_with_underscore_and_number"
         },
         {
           "match": "\\b(assert)\\b",
