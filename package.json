@@ -40,6 +40,16 @@
         "language": "gleam",
         "scopeName": "source.gleam",
         "path": "./syntaxes/gleam.tmLanguage.json"
+      },
+      {
+        "scopeName": "markdown.gleam.codeblock",
+        "path": "./syntaxes/gleam.codeblock.json",
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.gleam": "gleam"
+        }
       }
     ],
     "snippets": [
