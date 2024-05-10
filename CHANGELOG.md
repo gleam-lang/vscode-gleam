@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.9.0 - 2024-05-10
+
+- Gleam code blocks in markdown files are now highlighted.
+
 ## v2.8.0 - 2024-04-30
 
 - Improved the `external` snippet trigger to avoid rendering `@@external`.
