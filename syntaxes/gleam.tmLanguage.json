@@ -16,14 +16,144 @@
     },
     {
       "include": "#entity"
+    },
+    {
+      "include": "#import"
+    },
+    {
+      "include": "#let"
+    },
+    {
+      "include": "#dot_expressions"
+    },
+    {
+      "include": "#any_string_of_lowercase_text_with_underscore_and_number"
     }
   ],
   "repository": {
+    "type_select_expression": {
+      "patterns": [
+        {
+          "match": "(?:([a-z0-9_]+)(\\.))?([A-Z](?:[A-Za-z0-9_])+)",
+          "captures": {
+            "1": {
+              "name": "support.class.gleam"
+            },
+            "2": {
+              "name": "punctuation.gleam"
+            },
+            "3": {
+              "name": "entity.name.type.gleam"
+            }
+          }
+        }
+      ]
+    },
+    "dot_expressions": {
+      "patterns": [
+        {
+          "match": "([a-z0-9_]+)(\\.)((?:(?!\\()[a-z0-9_])+)",
+          "captures": {
+            "1": {
+              "name": "support.class.gleam"
+            },
+            "2": {
+              "name": "punctuation.gleam"
+            },
+            "3": {
+              "name": "entity.name.function.gleam"
+            }
+          }
+        }
+      ]
+    },
+    "any_string_of_lowercase_text_with_underscore_and_number": {
+      "match": "(\\b[a-z0-9_]+\\b)",
+      "name": "variable.other.readwrite"
+    },
+    "let": {
+      "patterns": [
+        {
+          "begin": "(let)",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type.gleam"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#inside_let"
+            }
+          ],
+          "end": "(=)",
+          "endCaptures": {
+            "1": {
+              "name": "keyword.operator.assignment.gleam"
+            }
+          }
+        }
+      ]
+    },
+    "inside_let": {
+      "patterns": [
+        {
+          "include": "#type_select_expression"
+        },
+        {
+          "include": "#any_string_of_lowercase_text_with_underscore_and_number"
+        },
+        {
+          "match": "\\b(assert)\\b",
+          "name": "keyword.control.gleam"
+        }
+      ]
+    },
+    "import": {
+      "patterns": [
+        {
+          "begin": "(import)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.gleam"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#inside_import"
+            }
+          ],
+          "end": "(^(?=.{0,1})(?:|))",
+          "endCaptures": {
+            "1": {
+              "name": "keyword.gleam"
+            }
+          }
+        }
+      ]
+    },
+    "inside_import": {
+      "patterns": [
+        {
+          "match": "(.+)(\\/)(.+)",
+          "captures": {
+            "1": {
+              "name": "support.class"
+            },
+            "2": {
+              "name": "punctuation.gleam"
+            },
+            "3": {
+              "name": "variable.other.object"
+            }
+          }
+        }
+      ]
+    },
     "keywords": {
       "patterns": [
         {
           "name": "keyword.control.gleam",
-          "match": "\\b(as|use|case|if|fn|import|let|assert|pub|type|opaque|const|todo|panic)\\b"
+          "match": "\\b(as|use|case|if|fn|assert|pub|type|opaque|const|todo|panic)\\b"
         },
         {
           "name": "keyword.operator.arrow.gleam",
@@ -86,7 +216,7 @@
       "patterns": [
         {
           "name": "comment.line.gleam",
-          "match": "\/\/.*"
+          "match": "//.*"
         }
       ]
     },
@@ -141,7 +271,7 @@
     "entity": {
       "patterns": [
         {
-          "begin": "\\b([[:lower:]][[:word:]]*)([[:space:]]*)?\\(",
+          "begin": "(?:([[:lower:]][[:word:]]*)\\.|(?!\\.)\\b)([[:lower:]][[:word:]]*)([[:space:]]*)?\\(",
           "end": "\\)",
           "patterns": [
             {
@@ -150,6 +280,9 @@
           ],
           "captures": {
             "1": {
+              "name": "support.class"
+            },
+            "2": {
               "name": "entity.name.function.gleam"
             }
           }
