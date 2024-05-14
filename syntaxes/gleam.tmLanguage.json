@@ -115,12 +115,12 @@
     },
     "binary_number": {
       "name": "constant.numeric.binary.gleam",
-      "match": "\\b0b[0-1]+\\b",
+      "match": "\\b0b(_?[01])+\\b",
       "patterns": []
     },
     "octal_number": {
       "name": "constant.numeric.octal.gleam",
-      "match": "\\b0o[0-7]+\\b",
+      "match": "\\b0o(_?[0-7])+\\b",
       "patterns": []
     },
     "decimal_number": {
@@ -130,7 +130,7 @@
     },
     "hexadecimal_number": {
       "name": "constant.numeric.hexadecimal.gleam",
-      "match": "\\b0x[[:xdigit:]]+\\b",
+      "match": "\\b0x(_?[[:xdigit:]])+\\b",
       "patterns": []
     },
     "boolean": {
