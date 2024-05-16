@@ -16,6 +16,9 @@
     },
     {
       "include": "#entity"
+    },
+    {
+      "include": "#discards"
     }
   ],
   "repository": {
@@ -163,6 +166,10 @@
           "match": "\\b([[:lower:]][[:word:]]*):"
         }
       ]
+    },
+    "discards": {
+      "name": "comment.unused.gleam",
+      "match": "\\b_(?:[[:word:]]+)?\\b"
     }
   },
   "scopeName": "source.gleam"
