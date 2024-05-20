@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Binary, octal, and hexadecimal numbers with underscores now have syntax
+  highlighting.
 - Discard patterns are now highlighted as `comment.unused.gleam`.
 
 ## v2.9.0 - 2024-05-10
