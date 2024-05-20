@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Discard patterns are now highlighted as `comment.unused.gleam`.
+
 ## v2.9.0 - 2024-05-10
 
 - Gleam code blocks in markdown files are now highlighted.
