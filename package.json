@@ -81,7 +81,7 @@
         },
         "gleam.inlayHints.pipelines": {
           "type": "boolean",
-          "default": true,
+          "default": false,
           "description": "Whether to show inlay type hints for multiline pipe expressions"
         }
       }
