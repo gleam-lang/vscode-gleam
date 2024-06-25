@@ -78,6 +78,11 @@
           "default": null,
           "description": "A path to the gleam executable. By default, the extension looks for gleam in the PATH, but if set, will use the path specified instead.",
           "scope": "machine"
+        },
+        "gleam.inlayHints.pipelines": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to show inlay type hints for multiline pipe expressions"
         }
       }
     }
