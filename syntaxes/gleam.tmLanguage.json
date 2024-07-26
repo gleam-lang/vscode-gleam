@@ -26,7 +26,7 @@
       "patterns": [
         {
           "name": "keyword.control.gleam",
-          "match": "\\b(import|pub|panic|use|type|let|as|if|else|todo|const|case|assert|try|opaque|fn)\\b"
+          "match": "\\b(as|use|case|if|fn|import|let|assert|pub|type|opaque|const|todo|panic|else|try)\\b"
         },
         {
           "name": "keyword.operator.arrow.gleam",
