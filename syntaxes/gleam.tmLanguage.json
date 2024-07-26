@@ -143,11 +143,6 @@
       "match": "\\b0[xX][[:xdigit:]]+\\b",
       "patterns": []
     },
-    "nil": {
-      "name": "constant.language.null.gleam",
-      "match": "\\bNil\\b",
-      "patterns": []
-    },
     "boolean": {
       "name": "constant.language.boolean.gleam",
       "match": "\\b(True|False)\\b",
