@@ -143,11 +143,6 @@
       "match": "\\b0[xX]0*[1-9a-zA-Z][0-9a-zA-Z]*\\b",
       "patterns": []
     },
-    "boolean": {
-      "name": "constant.language.boolean.gleam",
-      "match": "\\b(True|False)\\b",
-      "patterns": []
-    },
     "entity": {
       "patterns": [
         {
