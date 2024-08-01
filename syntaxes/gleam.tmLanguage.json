@@ -112,9 +112,6 @@
           "include": "#decimal_number"
         },
         {
-          "include": "#nil"
-        },
-        {
           "include": "#boolean"
         },
         {
