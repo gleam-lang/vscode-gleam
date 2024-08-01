@@ -26,7 +26,7 @@
       "patterns": [
         {
           "name": "keyword.control.gleam",
-          "match": "\\b(as|use|case|if|fn|import|let|assert|pub|type|opaque|const|todo|panic)\\b"
+          "match": "\\b(as|use|case|if|fn|import|let|assert|pub|type|opaque|const|todo|panic|else|try)\\b"
         },
         {
           "name": "keyword.operator.arrow.gleam",
@@ -41,12 +41,16 @@
           "match": "\\.\\."
         },
         {
+          "name": "keyword.operator.comparison.gleam",
+          "match": "(==|!=)"
+        },
+        {
           "name": "keyword.operator.comparison.float.gleam",
-          "match": "(<=\\.|>=\\.|==\\.|!=\\.|<\\.|>\\.)"
+          "match": "(<=\\.|>=\\.|<\\.|>\\.)"
         },
         {
           "name": "keyword.operator.comparison.int.gleam",
-          "match": "(<=|>=|==|!=|<|>)"
+          "match": "(<=|>=|<|>)"
         },
         {
           "name": "keyword.operator.logical.gleam",
@@ -62,7 +66,7 @@
         },
         {
           "name": "keyword.operator.arithmetic.float.gleam",
-          "match": "(\\+\\.|\\-\\.|/\\.|\\*\\.|%\\.)"
+          "match": "(\\+\\.|\\-\\.|/\\.|\\*\\.)"
         },
         {
           "name": "keyword.operator.arithmetic.int.gleam",
@@ -112,39 +116,34 @@
         },
         {
           "name": "entity.name.type.gleam",
-          "match": "[[:upper:]][[:word:]]*"
+          "match": "[[:upper:]][[:alnum:]]*"
         }
       ]
     },
     "binary_number": {
       "name": "constant.numeric.binary.gleam",
-      "match": "\\b0[bB](_?[01])+\\b",
+      "match": "\\b0[bB]0*1[01_]*\\b",
       "patterns": []
     },
     "octal_number": {
       "name": "constant.numeric.octal.gleam",
-      "match": "\\b0[oO](_?[0-7])+\\b",
+      "match": "\\b0[oO]0*[1-7][0-7]*\\b",
       "patterns": []
     },
     "decimal_number": {
       "name": "constant.numeric.decimal.gleam",
-      "match": "\\b[[:digit:]]+(_?[[:digit:]])*(\\.[[:digit:]]*)?(e-?[[:digit:]]*)?\\b",
+      "match": "\\b(0*[1-9][0-9_]*|0)(\\.(0*[1-9][0-9_]*|0)?(e-?0*[1-9][0-9]*)?)?\\b",
       "patterns": []
     },
     "hexadecimal_number": {
       "name": "constant.numeric.hexadecimal.gleam",
-      "match": "\\b0[xX](_?[[:xdigit:]])+\\b",
-      "patterns": []
-    },
-    "boolean": {
-      "name": "constant.language.boolean.gleam",
-      "match": "\\b(True|False)\\b",
+      "match": "\\b0[xX]0*[1-9a-zA-Z][0-9a-zA-Z]*\\b",
       "patterns": []
     },
     "entity": {
       "patterns": [
         {
-          "begin": "\\b([[:lower:]][[:word:]]*)([[:space:]]*)?\\(",
+          "begin": "\\b([[:lower:]][[:word:]]*)\\b[[:space:]]*\\(",
           "end": "\\)",
           "patterns": [
             {
