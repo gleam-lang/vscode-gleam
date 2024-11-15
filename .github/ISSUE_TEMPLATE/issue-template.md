@@ -1,6 +1,6 @@
 ---
 name: Issue template
-about: ''
+about: Issue template
 title: ''
 labels: ''
 assignees: ''
