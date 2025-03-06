@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- `echo` added as a keyword.
+
 ## v2.10.0 - 2024-08-15
 
 - Syntax highlighting has been improved.
