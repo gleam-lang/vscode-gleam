@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v2.11.0 - 2025-03-06
 
 - `echo` added as a keyword.
 
