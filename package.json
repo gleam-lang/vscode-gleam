@@ -79,10 +79,20 @@
           "description": "A path to the gleam executable. By default, the extension looks for gleam in the PATH, but if set, will use the path specified instead.",
           "scope": "machine"
         },
-        "gleam.inlay_hints.pipelines": {
+        "gleam.inlayHints.parameterTypes": {
+          "type": "boolean",
+          "markdownDescription": "Whether to show inlay hints for return types on function signatures:\n ```gleam\nfn f(\n  x//: Int\n) {\n    x + 1\n}\n```\n",
+          "default": false
+        },
+        "gleam.inlayHints.returnTypes": {
+          "type": "boolean",
+          "markdownDescription": "Whether to show inlay hints for return types on function signatures:\n ```gleam\nfn f() // -> Int\n  {\n    42\n}\n```\n",
+          "default": false
+        },
+        "gleam.inlayHints.pipelines": {
           "type": "boolean",
           "default": false,
-          "description": "Whether to show inlay type hints for multiline pipe expressions"
+          "markdownDescription": "Whether to show inlay type hints for multiline pipe expressions:\n ```gleam\nf() //Int\n|> g() //List(String)\n|> k() //Bool \n```\n"
         }
       }
     }
