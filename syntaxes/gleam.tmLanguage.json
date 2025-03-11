@@ -120,6 +120,11 @@
         }
       ]
     },
+    "boolean": {
+        "name": "constant.language.boolean.gleam",
+        "match": "\\bTrue|False\\b",
+        "patterns": []
+    },
     "binary_number": {
       "name": "constant.numeric.binary.gleam",
       "match": "\\b0[bB]0*1[01_]*\\b",
@@ -171,5 +176,6 @@
       "match": "\\b_(?:[[:word:]]+)?\\b"
     }
   },
-  "scopeName": "source.gleam"
+  "scopeName": "source.gleam",
+  "fileTypes": ["gleam"]
 }
