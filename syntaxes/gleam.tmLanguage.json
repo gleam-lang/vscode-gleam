@@ -112,18 +112,10 @@
           "include": "#decimal_number"
         },
         {
-          "include": "#boolean"
-        },
-        {
           "name": "entity.name.type.gleam",
           "match": "[[:upper:]][[:alnum:]]*"
         }
       ]
-    },
-    "boolean": {
-        "name": "constant.language.boolean.gleam",
-        "match": "\\bTrue|False\\b",
-        "patterns": []
     },
     "binary_number": {
       "name": "constant.numeric.binary.gleam",
