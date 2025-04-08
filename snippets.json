@@ -6,7 +6,7 @@
     ],
     "body": [
       "pub fn ${1:function_name}(${2}) -> ${3:Nil} {",
-      "\t${0:todo}",
+      "  ${0:todo}",
       "}"
     ],
     "description": "public function"
@@ -17,7 +17,7 @@
     ],
     "body": [
       "fn ${1:function_name}(${2}) -> ${3:Nil} {",
-      "\t${0:todo}",
+      "  ${0:todo}",
       "}"
     ],
     "description": "private function"
@@ -28,7 +28,7 @@
     ],
     "body": [
       "pub fn ${1:name}_test() {",
-      "\t${0}",
+      "  ${0}",
       "}"
     ],
     "description": "test function"
@@ -76,7 +76,7 @@
     ],
     "body": [
       "case ${1} {",
-      "\t${2} -> ${0}",
+      "  ${2} -> ${0}",
       "}"
     ],
     "description": "case expression"
@@ -87,7 +87,7 @@
     ],
     "body": [
       "type ${1:Name} {",
-      "\t${0:$1}",
+      "  ${0:$1}",
       "}"
     ],
     "description": "type declaration"
@@ -100,7 +100,7 @@
     ],
     "body": [
       "pub type ${1:Name} {",
-      "\t${0:$1}",
+      "  ${0:$1}",
       "}"
     ],
     "description": "public type declaration"
@@ -122,7 +122,8 @@
       "pub external fn"
     ],
     "body": [
-      "pub external fn ${1:function_name}(${2}) -> ${3:Nil} = \"${4}\" \"${0}\""
+      "@external(${6:erlang}, \"${1}\", \"${2}\")",
+      "pub fn ${3:function_name}(${4}) -> ${5:Nil}"
     ],
     "description": "public external function"
   },
@@ -172,7 +173,7 @@
     ],
     "body": [
       "{",
-      "\t${0}",
+      "  ${0}",
       "}"
     ],
     "description": "block"
