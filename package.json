@@ -2,7 +2,7 @@
   "name": "gleam",
   "displayName": "Gleam",
   "description": "Support for the Gleam programming language",
-  "version": "2.11.1",
+  "version": "2.12.0",
   "publisher": "gleam",
   "repository": {
     "type": "git",

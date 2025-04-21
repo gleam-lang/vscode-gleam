@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v2.12.0 - 2025-04-21
 
 - `try` is no longer highlighted as a keyword.
 - Fixed some cases where numbers would not be properly highlighted.
