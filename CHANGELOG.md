@@ -5,7 +5,6 @@
 - `try` is no longer highlighted as a keyword.
 - Fixed some cases where numbers would not be properly highlighted.
 - Updated the `pub external fn` snippet to use modern Gleam syntax.
-- Updated the snippets to use two spaces as indentation instead of a tab character.
 
 ## v2.11.1 - 2025-03-17
 
