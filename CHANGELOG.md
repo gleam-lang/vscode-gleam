@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.12.1 - 2025-06-24
+
+- Fixed upright Lucy icon.
+
+
 ## v2.12.0 - 2025-04-21
 
 - `try` is no longer highlighted as a keyword.
