@@ -19,6 +19,9 @@
     },
     {
       "include": "#discards"
+    },
+    {
+      "include": "#punctuation"
     }
   ],
   "repository": {
@@ -86,6 +89,34 @@
         {
           "name": "constant.character.escape.gleam",
           "match": "\\\\."
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        { 
+            "name": "punctuation.braces.begin.gleam",
+            "match": "\\{"
+        },
+        { 
+            "name": "punctuation.braces.end.gleam",
+            "match": "\\}"
+        },
+        { 
+            "name": "punctuation.brackets.begin.gleam",
+            "match": "\\["
+        },
+        { 
+            "name": "punctuation.brackets.end.gleam",
+            "match": "\\]"
+        },
+        { 
+            "name": "punctuation.separator.comma.gleam",
+            "match": ","
+        },
+        { 
+            "name": "punctuation.accessor.dot.gleam",
+            "match": "(?<=[[:word:]])\\.(?=[[:word:]])"
         }
       ]
     },
