@@ -116,7 +116,7 @@
         },
         { 
             "name": "punctuation.accessor.dot.gleam",
-            "match": "(?<=[[:word:]])\\.(?=[[:word:]])"
+            "match": "\\."
         }
       ]
     },
