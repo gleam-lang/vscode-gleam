@@ -112,7 +112,7 @@
         },
         { 
             "name": "punctuation.parens.begin.gleam",
-            "match": "#?\\("
+            "match": "#?[[:space:]]*\\("
         },
          { 
             "name": "punctuation.parens.end.gleam",
@@ -179,7 +179,7 @@
     "entity": {
       "patterns": [
         {
-        "begin": "([[:lower:]][[:word:]]*)(\\()",
+        "begin": "([[:lower:]][[:word:]]*)[[:space:]]*(\\()",
         "end": "\\)",
         "patterns": [{ "include": "$self" }],
         "beginCaptures": {
