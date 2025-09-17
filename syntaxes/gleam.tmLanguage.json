@@ -179,14 +179,12 @@
     "entity": {
       "patterns": [
         {
-        "begin": "(?:#)?([[:lower:]][[:word:]]*(?:\\.[[:lower:]][[:word:]]*)*)\\(",
+        "begin": "([[:lower:]][[:word:]]*)(\\()",
         "end": "\\)",
-        "patterns": [
-          { "include": "$self" }
-        ],
+        "patterns": [{ "include": "$self" }],
         "beginCaptures": {
           "1": { "name": "entity.name.function.gleam" },
-          "0": { "name": "punctuation.parens.begin.gleam" }
+          "2": { "name": "punctuation.parens.begin.gleam" }
         },
         "endCaptures": {
           "0": { "name": "punctuation.parens.end.gleam" }
