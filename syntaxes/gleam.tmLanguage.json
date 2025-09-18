@@ -125,6 +125,10 @@
         { 
             "name": "punctuation.accessor.dot.gleam",
             "match": "\\."
+        },
+        { 
+            "name": "punctuation.colon.gleam",
+            "match": "\\:"
         }
       ]
     },
