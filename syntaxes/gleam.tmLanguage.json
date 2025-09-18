@@ -22,6 +22,9 @@
     },
     {
       "include": "#punctuation"
+    },
+    {
+      "include": "#attributes"
     }
   ],
   "repository": {
@@ -137,6 +140,18 @@
         {
           "name": "comment.line.gleam",
           "match": "\/\/.*"
+        }
+      ]
+    },
+    "attributes": {
+      "patterns": [
+        {
+          "name": "attributes.deprecated.gleam",
+          "match": "@[[:space:]]*deprecated"
+        },
+        {
+          "name": "attributes.external.gleam",
+          "match": "@[[:space:]]*external"
         }
       ]
     },
