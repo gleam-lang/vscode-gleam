@@ -1,9 +1,12 @@
 # Changelog
 
+## v2.12.2 - 2026-05-29
+
+- Updated dependencies.
+
 ## v2.12.1 - 2025-06-24
 
 - Fixed upright Lucy icon.
-
 
 ## v2.12.0 - 2025-04-21
 
