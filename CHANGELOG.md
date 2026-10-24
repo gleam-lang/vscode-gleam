@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Dependency packages updated.
+
 ## v2.13.0 - 2026-06-18
 
 - `<<` and `>>` are now auto-closed and can be used to surround selections.
