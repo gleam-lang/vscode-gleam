@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v2.13.1 - 2026-10-25
 
 - Dependency packages updated.
 

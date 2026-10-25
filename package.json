@@ -2,14 +2,14 @@
   "name": "gleam",
   "displayName": "Gleam",
   "description": "Support for the Gleam programming language",
-  "version": "2.13.0",
+  "version": "2.13.1",
   "publisher": "gleam",
   "repository": {
     "type": "git",
     "url": "https://github.com/gleam-lang/vscode-gleam"
   },
   "engines": {
-    "vscode": "^1.52.0"
+    "vscode": "^1.140.0"
   },
   "categories": [
     "Programming Languages",
